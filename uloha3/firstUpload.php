@@ -38,8 +38,11 @@ if($_SERVER['REQUEST_METHOD'] !== 'POST') {
     die(json_encode(array('status_code' => 405, 'status_message' => 'Not allowed request method!', 'data' => array())));
 }
 
+require_once 'config.php';
+
 $hash = bin2hex(random_bytes(16));
 $uploadfile = uploadFile($hash, 'csv-first');
+$logDB = logFile($uploadfile, 1, $conn);
 
 
 $csv = parseCSV($uploadfile['uploadfile'], $_POST['delimiter']);
