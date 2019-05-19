@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Administrácia virtualiek</title>
+    <link rel="stylesheet" href="../vendor/application/bootstrap/css/bootstrap.min.css">
+    <style>
+        input, label {
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div style="margin: 0 auto; margin-bottom: 80px; padding: 15px; width: 400px; height: 200px">
+    <form id="first-upload">
+        <div class="form-group">
+            <label for="csv-first">CSV súbor: </label>
+            <input type="file" name="csv-first" class="form-control" id="csv-first" accept=".csv" required>
+        </div>
+        <div class="form-group">
+            <label for="delimiter">Oddeľovač: </label>
+            <input type="text" name="delimiter" class="form-control" id="delimiter" maxlength="1"  minlength="1" required>
+        </div>
+        <button class="btn btn-primary" type="submit" name="submit">Odoslať</button>
+    </form>
+</div>
+<div style="margin: 0 auto; padding: 15px; width: 400px; height: 200px">
+    <form id="second-upload">
+        <div class="form-group">
+            <label for="csv-second">CSV súbor: </label>
+            <input type="file" name="csv-second" class="form-control" id="csv-second" accept=".csv" required>
+        </div>
+        <div class="form-group">
+            <label for="delimiter2">Oddeľovač: </label>
+            <input type="text" name="delimiter" class="form-control" id="delimiter2" maxlength="1"  minlength="1" required>
+        </div>
+        <button class="btn btn-primary" type="submit" name="submit" id="second-send-button">Odoslať</button>
+    </form>
+</div>
+<script src="../vendor/application/scripts/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // $.post("#", function(response){
+        //     var contract = response.data;
+        //     if(contract !=null){
+        console.log("OK");
+        //         console.log(contract);
+        //         //console.log(contract.length);
+        //         var table_doc = $("#Contracts")[0];
+        //         printContracts(contract, table_doc);
+        //     }
+        // })
+    });
+
+    $('#first-upload').submit(function (e) {
+        e.preventDefault();
+
+        // if (formSent) return false;
+
+        const formButton = $(this).find('#send-button');
+        // formSent = true;
+
+        formButton.html('Odosielam');
+
+        const formData = new FormData(this);
+
+        $.ajax({
+            url: 'firstUpload.php',
+            type: 'POST',
+            data: formData,
+            responseType: "json",
+            success: function () {
+                console.log('Registracia odoslana!');
+            },
+            error: function () {
+                formButton.html('Chyba odosielania<div class="note">Kliknutím odošleš formulár znovu</div>');
+                // formSent = false;
+                console.warn('Chyba registracie', arguments);
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+
+        return false
+    });
+
+    $('#second-upload').submit(function (e) {
+        e.preventDefault();
+        const formButton = $(this).find('#second-send-button');
+
+        formButton.html('Odosielam');
+
+        const formData = new FormData(this);
+
+        $.ajax({
+            url: 'secondUpload.php',
+            type: 'POST',
+            data: formData,
+            responseType: "json",
+            success: function () {
+                console.log('Second OK!');
+                formButton.html('Odoslané');
+            },
+            error: function () {
+                formButton.html('Chyba odosielania<div class="note">Kliknutím odošleš formulár znovu</div>');
+                // formSent = false;
+                console.warn('Second fail!', arguments);
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+
+        return false
+    });
+</script>
+</body>
+</html>

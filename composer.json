@@ -1,0 +1,12 @@
+{
+    "name": "daniel/webte2-projekt",
+    "authors": [
+        {
+            "name": "Daniel Marinič",
+            "email": "dano.marinic@gmail.com"
+        }
+    ],
+    "require": {
+        "swiftmailer/swiftmailer": "^6.0"
+    }
+}
