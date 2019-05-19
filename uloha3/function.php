@@ -30,23 +30,31 @@ function logFile($uploadfile, $type, $conn) {
 }
 
 function getFileById($id, $conn) {
-    $sql = "Select * From files Where id = :id;";
-    $statement = $conn->prepare($sql);
-    $statement->bindParam(':id', $id, PDO::PARAM_INT);
-    $statement->execute();
+    try {
+        $sql = "Select * From files Where id = :id;";
+        $statement = $conn->prepare($sql);
+        $statement->bindParam(':id', $id, PDO::PARAM_INT);
+        $statement->execute();
 
-    $result = $statement->fetch();
-    return $result;
+        $result = $statement->fetch();
+        return $result;
+    } catch (PDOException $e) {
+        return false;
+    }
 }
 
 function getMaxId($conn) {
-    $sql = "Select Max(id) From files;";
-    $statement = $conn->prepare($sql);
+    try {
+        $sql = "Select Max(id) From files;";
+        $statement = $conn->prepare($sql);
 
-    $statement->execute();
-    $result = $statement->fetch();
-    if($result) $result = intval($result[0]);
-    return $result;
+        $statement->execute();
+        $result = $statement->fetch();
+        if($result) $result = intval($result[0]);
+        return $result;
+    } catch (PDOException $e) {
+        return false;
+    }
 }
 
 function uploadFile($filename, $name) {
