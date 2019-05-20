@@ -1,14 +1,15 @@
 <?php
 
-function addTemplate($type, $text, $conn) {
+function addTemplate($name, $type, $text, $conn) {
     require_once 'config.php';
 
     try {
         $sql = "Insert Into mail_template
-                (`type`, `text`)
-            Values (:type, :text);";
+                (`name`, `type`, `text`)
+            Values (:name, :type, :text);";
 
         $statement = $conn->prepare($sql);
+        $statement->bindParam(':name', $name, PDO::PARAM_STR);
         $statement->bindParam(':type', $type, PDO::PARAM_INT);
         $statement->bindParam(':text', $text, PDO::PARAM_STR);
         $statement->execute();
@@ -31,7 +32,7 @@ function getTemplate($conn, $id = NULL) {
             $statement->bindParam(':id', $id, PDO::PARAM_STR);
         }
         else {
-            $sql = "Select * From mail_template;";
+            $sql = "Select a.id, b.name as type, a.name, a.text, a.created_at From mail_template a INNER JOIN mail_template_type b On a.type = b.id ORDER BY created_at desc;";
             $statement = $conn->prepare($sql);
         }
         $statement->execute();
@@ -66,6 +67,7 @@ function deleteTemplate($id, $conn) {
 /* ------------------------------------------------------------------------------------------------------------------ */
 
 require_once 'config.php';
+include 'function.php';
 
 header('Content-Type: application/json');
 //header('Content-Type: text/html; charset=utf-8');
@@ -76,8 +78,17 @@ if($method === 'GET') {
     if(isset($_SERVER['PATH_INFO'])) { //ID
         $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
         $param = array_shift($request);
-        $result = getTemplate($conn, $param);
-        echo json_encode(['data' => $result['data']]);
+        if($param === 'files') {
+            $result_files = getFilesByType(2, $conn);
+//            var_dump($result_files);
+            $result_templates = getTemplate($conn);
+//            var_dump($result_templates);
+            echo json_encode(['data' => array('files' => $result_files, 'templates' => $result_templates['data'])]);
+        }
+        else {
+            $result = getTemplate($conn, $param);
+            echo json_encode(['data' => $result['data']]);
+        }
     }
     else { // ALL
         $result = getTemplate($conn);
@@ -86,7 +97,7 @@ if($method === 'GET') {
 }
 elseif ($method === 'POST') {
     if(isset($_POST['type']) && isset($_POST['text'])) {
-        $result = addTemplate($_POST['type'], $_POST['text'], $conn);
+        $result = addTemplate($_POST['template-name'], $_POST['template-type'], $_POST['template-text'], $conn);
         $code = $result['accept'] ? 201 : 400;
         http_response_code($code);
         echo json_encode(['status_code' => $code]);

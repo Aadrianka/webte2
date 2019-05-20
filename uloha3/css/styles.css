@@ -1,0 +1,107 @@
+body {
+    padding: 50px;
+    /*margin: 0 auto;*/
+}
+* {
+    box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    /*padding: 15px;*/
+    /*margin: 5px;*/
+    height: 400px; /* Should be removed. Only for demonstration */
+}
+
+.column-body {
+    padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row {
+    margin: 0 auto;
+}
+
+.delimiter {
+    /*padding: 6px 12px;*/
+    /*margin: 1px;*/
+    width: 25px;
+    height: 38px;
+    background-color: white;
+    border: #c0c0c0 1px solid;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.delimiter:hover {
+    background-color: #007bff;
+    border: #d6d6d6 1px solid;
+    color: white;
+}
+
+.delimiter:after {
+    background-color: #007bff;
+    border: 0;
+}
+
+.delimiter:focus {
+    outline: none;
+}
+
+.checked {
+    color: white;
+    background-color: #007bff;
+    border: 0;
+}
+
+.floated {
+    float:left;
+    margin-right:5px;
+}
+
+/*hr {*/
+/*    border: 0;*/
+/*    height: 1px;*/
+/*    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));*/
+/*}*/
+
+hr {
+    height: 30px;
+    border-style: solid;
+    border-color: #8c8b8b;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr:before {
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: #8c8b8b;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+h2 {
+    padding-left: 30px;
+}
+
+.custom-file-input ~ .custom-file-label::after {
+    content: "Nahrať";
+}
+
+.green-row {
+    background-color: rgba(0, 246, 35, 0.3);
+    transition: 0.7s;
+}

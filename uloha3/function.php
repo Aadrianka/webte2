@@ -19,7 +19,7 @@ function logFile($uploadfile, $type, $conn) {
         $statement = $conn->prepare($sql);
         $statement->bindParam(':basename', $uploadfile['basename'], PDO::PARAM_STR);
         $statement->bindParam(':filename', $uploadfile['uploadfile'], PDO::PARAM_STR);
-        $statement->bindParam(':delimiter', $_POST['delimiter'], PDO::PARAM_STR);
+        $statement->bindParam(':delimiter', $uploadfile['delimiter'], PDO::PARAM_STR);
         $statement->bindParam(':type', $type, PDO::PARAM_INT);
 
         $statement->execute();
@@ -37,6 +37,20 @@ function getFileById($id, $conn) {
         $statement->execute();
 
         $result = $statement->fetch();
+        return $result;
+    } catch (PDOException $e) {
+        return false;
+    }
+}
+
+function getFilesByType($type, $conn) {
+    try {
+        $sql = "Select * From files Where `type` = :type Order by created_at desc;";
+        $statement = $conn->prepare($sql);
+        $statement->bindParam(':type', $type, PDO::PARAM_INT);
+        $statement->execute();
+
+        $result = $statement->fetchAll();
         return $result;
     } catch (PDOException $e) {
         return false;

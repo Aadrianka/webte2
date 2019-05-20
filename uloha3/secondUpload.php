@@ -48,12 +48,13 @@ $hash = bin2hex(random_bytes(16));
 
 if(isset($_FILES['csv-second'])) {
     $uploadfile = uploadFile($hash, 'csv-second');
+    $uploadfile['delimiter'] = $_POST['second-delimiter'];
     $logDB = logFile($uploadfile, 2, $conn);
 
     //TEST
     if($logDB['accept']) {
         $uploadfile['fileId'] = getMaxId($conn);
-        $uploadfile['fileDelimiter'] = $_POST['delimiter'];
+        $uploadfile['fileDelimiter'] = $_POST['second-delimiter'];
         echo json_encode(['status' => 200, 'status_message' => 'OK', 'data' => $uploadfile]);
         http_response_code(200);
         exit;
@@ -70,4 +71,4 @@ else {
 
 
 
-//$csv = parseCSV($uploadfile['uploadfile'], $_POST['delimiter']);
+//$csv = parseCSV($uploadfile['uploadfile'], $_POST['second-delimiter']);
