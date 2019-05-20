@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="301c98d9-7309-41e0-8985-c3140cd14c41" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uloha3/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/uloha3/function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uloha3/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/uloha3/js/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uloha3/secondUpload.php" beforeDir="false" afterPath="$PROJECT_DIR$/uloha3/secondUpload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uloha3/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/uloha3/template.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,18 +92,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uloha3/css/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="104" column="42" selection-start-line="104" selection-start-column="42" selection-end-line="104" selection-end-column="42" />
-              <folding>
-                <element signature="e#221#412#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uloha3/js/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -117,15 +101,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uloha3/firstUpload.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/uloha3/secondUpload.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="454">
@@ -135,10 +110,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uloha3/config.php">
+        <entry file="file://$PROJECT_DIR$/LocalUser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="451">
+              <caret line="40" column="39" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" selection-start-line="28" selection-end-line="28" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ldapfunctions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-68">
+              <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -165,6 +167,7 @@
       <find>sendMail</find>
       <find>$template</find>
       <find>acc</find>
+      <find>fetchByLogin</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -236,18 +239,6 @@
               <item name="WEBTE2-PROJEKT-GIT" type="462c0819:PsiDirectoryNode" />
               <item name="uloha3" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="WEBTE2-PROJEKT-GIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WEBTE2-PROJEKT-GIT" type="462c0819:PsiDirectoryNode" />
-              <item name="uloha3" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WEBTE2-PROJEKT-GIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WEBTE2-PROJEKT-GIT" type="462c0819:PsiDirectoryNode" />
-              <item name="uloha3" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -296,7 +287,7 @@
       <updated>1558191484384</updated>
       <workItem from="1558191485812" duration="8046000" />
       <workItem from="1558268477633" duration="9692000" />
-      <workItem from="1558299923547" duration="45589000" />
+      <workItem from="1558299923547" duration="47304000" />
     </task>
     <task id="LOCAL-00001" summary="Uloha3 - 1st, 2nd API, main app logic">
       <created>1558269225947</created>
@@ -340,11 +331,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558367847322</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Uloha3 - Mailer">
+      <created>1558373117398</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1558373117398</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63327000" />
+    <option name="totallyTimeSpent" value="65042000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -403,7 +401,8 @@
     <MESSAGE value="Uloha3 - API addTemplate" />
     <MESSAGE value="Uloha3 - template.php REST API" />
     <MESSAGE value="Uloha3 - fronted layout, AJAX..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Uloha3 - fronted layout, AJAX..." />
+    <MESSAGE value="Uloha3 - Mailer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uloha3 - Mailer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -424,7 +423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.php" />
     <entry file="file://$PROJECT_DIR$/mainscript.js" />
     <entry file="file://$PROJECT_DIR$/style.css" />
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/ldap/ldap.php">
@@ -434,17 +432,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ldapfunctions.php" />
     <entry file="file://$PROJECT_DIR$/uloha2.php" />
     <entry file="file://$PROJECT_DIR$/uloha1.php" />
-    <entry file="file://$PROJECT_DIR$/index.php" />
-    <entry file="file://$PROJECT_DIR$/LocalUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4c9e0a0f-ce6b-4529-aff0-3a0f4d534d13/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -551,6 +540,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="454">
           <caret line="116" column="37" selection-start-line="116" selection-start-column="37" selection-end-line="116" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LocalUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="40" column="39" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ldapfunctions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" selection-start-line="28" selection-end-line="28" selection-end-column="16" />
         </state>
       </provider>
     </entry>
