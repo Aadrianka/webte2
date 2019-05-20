@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="301c98d9-7309-41e0-8985-c3140cd14c41" name="Default Changelist" comment="Uloha3 - template.php REST API">
-      <change afterPath="$PROJECT_DIR$/uloha3/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uloha3/js/scripts.js" afterDir="false" />
+    <list default="true" id="301c98d9-7309-41e0-8985-c3140cd14c41" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uloha3/firstUpload.php" beforeDir="false" afterPath="$PROJECT_DIR$/uloha3/firstUpload.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uloha3/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/uloha3/function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uloha3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/uloha3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha3/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/uloha3/js/scripts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uloha3/secondUpload.php" beforeDir="false" afterPath="$PROJECT_DIR$/uloha3/secondUpload.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uloha3/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/uloha3/template.php" afterDir="false" />
     </list>
@@ -53,8 +50,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uloha3/function.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="66" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="66" />
+            <state relative-caret-position="291">
+              <caret line="113" column="76" selection-start-line="113" selection-start-column="76" selection-end-line="113" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -62,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uloha3/template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
+            <state relative-caret-position="408">
+              <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -110,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uloha3/js/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="91" column="44" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
+            <state relative-caret-position="119">
+              <caret line="100" column="36" lean-forward="true" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -128,11 +125,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/uloha3/secondUpload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="50" column="58" lean-forward="true" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
+            <state relative-caret-position="454">
+              <caret line="116" column="37" selection-start-line="116" selection-start-column="37" selection-end-line="116" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -162,9 +159,12 @@
       <find>butto</find>
       <find>first-up</find>
       <find>tran</find>
-      <find>get</find>
-      <find>delimiter</find>
       <find>myModal</find>
+      <find>delimiter</find>
+      <find>get</find>
+      <find>sendMail</find>
+      <find>$template</find>
+      <find>acc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -189,13 +189,13 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/uloha3/index.html" />
         <option value="$PROJECT_DIR$/uloha3/styles.css" />
-        <option value="$PROJECT_DIR$/uloha3/secondUpload.php" />
-        <option value="$PROJECT_DIR$/uloha3/function.php" />
         <option value="$PROJECT_DIR$/uloha3/css/styles.css" />
         <option value="$PROJECT_DIR$/uloha3/firstUpload.php" />
-        <option value="$PROJECT_DIR$/uloha3/template.php" />
         <option value="$PROJECT_DIR$/uloha3/select.html" />
+        <option value="$PROJECT_DIR$/uloha3/template.php" />
         <option value="$PROJECT_DIR$/uloha3/js/scripts.js" />
+        <option value="$PROJECT_DIR$/uloha3/function.php" />
+        <option value="$PROJECT_DIR$/uloha3/secondUpload.php" />
       </list>
     </option>
   </component>
@@ -296,7 +296,7 @@
       <updated>1558191484384</updated>
       <workItem from="1558191485812" duration="8046000" />
       <workItem from="1558268477633" duration="9692000" />
-      <workItem from="1558299923547" duration="40531000" />
+      <workItem from="1558299923547" duration="45589000" />
     </task>
     <task id="LOCAL-00001" summary="Uloha3 - 1st, 2nd API, main app logic">
       <created>1558269225947</created>
@@ -333,17 +333,24 @@
       <option name="project" value="LOCAL" />
       <updated>1558303980257</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Uloha3 - fronted layout, AJAX...">
+      <created>1558367847322</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558367847322</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58269000" />
+    <option name="totallyTimeSpent" value="63327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.4216366" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28456375" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -395,7 +402,8 @@
     <MESSAGE value="Uloha3 - log file added" />
     <MESSAGE value="Uloha3 - API addTemplate" />
     <MESSAGE value="Uloha3 - template.php REST API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Uloha3 - template.php REST API" />
+    <MESSAGE value="Uloha3 - fronted layout, AJAX..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Uloha3 - fronted layout, AJAX..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -461,13 +469,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uloha3/secondUpload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="50" column="58" lean-forward="true" selection-start-line="50" selection-start-column="58" selection-end-line="50" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uloha3/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
@@ -475,13 +476,6 @@
           <folding>
             <element signature="e#221#412#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uloha3/function.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="66" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -501,13 +495,6 @@
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uloha3/template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -541,8 +528,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/uloha3/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="91" column="44" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
+        <state relative-caret-position="119">
+          <caret line="100" column="36" lean-forward="true" selection-start-line="100" selection-start-column="36" selection-end-line="100" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uloha3/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uloha3/function.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="113" column="76" selection-start-line="113" selection-start-column="76" selection-end-line="113" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uloha3/secondUpload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="116" column="37" selection-start-line="116" selection-start-column="37" selection-end-line="116" selection-end-column="37" />
         </state>
       </provider>
     </entry>

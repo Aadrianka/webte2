@@ -98,21 +98,21 @@ $(document).ready(function () {
         const formData = new FormData(this);
 
         $.ajax({
-            url: 'template.php',
+            url: 'secondUpload.php',
             type: 'POST',
             data: formData,
             responseType: "json",
             success: function () {
                 console.log('Send OK!');
-                getFiles(2, true);
-                setSelectOption();
+                // getFiles(2, true);
+                // setSelectOption();
                 formButton.removeClass('btn-primary').addClass('btn-success');
                 formButton.html('Odoslané');
             },
             error: function () {
                 formButton.html('Chyba odosielania<div class="note">Kliknutím odošleš formulár znovu</div>');
                 // formSent = false;
-                console.warn('Second fail!', arguments);
+                console.warn('Send fail!', arguments);
             },
             cache: false,
             contentType: false,

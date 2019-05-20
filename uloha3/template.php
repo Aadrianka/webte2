@@ -24,32 +24,6 @@ function addTemplate($name, $type, $text, $conn) {
     }
 }
 
-function getTemplate($conn, $id = NULL) {
-    try {
-        if($id) {
-            $sql = "Select * From mail_template Where 1 = 1 And id = :id;";
-            $statement = $conn->prepare($sql);
-            $statement->bindParam(':id', $id, PDO::PARAM_STR);
-        }
-        else {
-            $sql = "Select a.id, b.name as type, a.name, a.text, a.created_at From mail_template a INNER JOIN mail_template_type b On a.type = b.id ORDER BY created_at desc;";
-            $statement = $conn->prepare($sql);
-        }
-        $statement->execute();
-
-        $data = $id ? $statement->fetch() : $statement->fetchAll();
-
-        if($data)
-            $result = $data;
-        else
-            $result = array();
-
-        return array('accept' => true, 'error' => '', 'data' => $result);
-    } catch (PDOException $e) {
-        return array('accept' => false, 'error' => $e->getMessage());
-    }
-}
-
 function deleteTemplate($id, $conn) {
     try {
         $sql = "Delete From mail_template Where id = :id;";

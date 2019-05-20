@@ -98,3 +98,33 @@ function parseCSV($file, $delimiter = ';') {
     }
     return false;
 }
+
+function getTemplate($conn, $id = NULL) {
+    try {
+        if($id) {
+            $sql = "Select a.id, a.text, a.name, b.name as `type`, a.created_at
+                    From mail_template a
+                    Inner JOIN mail_template_type b
+                        On a.type = b.id 
+                    Where a.id = :id;";
+            $statement = $conn->prepare($sql);
+            $statement->bindParam(':id', $id, PDO::PARAM_STR);
+        }
+        else {
+            $sql = "Select a.id, b.name as type, a.name, a.text, a.created_at From mail_template a INNER JOIN mail_template_type b On a.type = b.id ORDER BY created_at desc;";
+            $statement = $conn->prepare($sql);
+        }
+        $statement->execute();
+
+        $data = $id ? $statement->fetch() : $statement->fetchAll();
+
+        if($data)
+            $result = $data;
+        else
+            $result = array();
+
+        return array('accept' => true, 'error' => '', 'data' => $result);
+    } catch (PDOException $e) {
+        return array('accept' => false, 'error' => $e->getMessage());
+    }
+}
