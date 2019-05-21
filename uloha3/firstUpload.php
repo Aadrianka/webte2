@@ -32,6 +32,9 @@ function generateCsv($filename, $list, $delimiter) {
 /* --------------------------------------------- MAIN --------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------------------ */
 
+if(!checkAuth()) {
+    die(json_encode(['status' => 401, 'status_message' => 'Je potrebné prihlásenie ako admin!']));
+}
 //header('Content-Type: application/json');
 header('Content-Type: text/html; charset=utf-8');
 

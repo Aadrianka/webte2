@@ -43,6 +43,10 @@ function deleteTemplate($id, $conn) {
 require_once 'config.php';
 include 'function.php';
 
+if(!checkAuth()) {
+    die(json_encode(['status' => 401, 'status_message' => 'Je potrebné prihlásenie ako admin!']));
+}
+
 header('Content-Type: application/json');
 //header('Content-Type: text/html; charset=utf-8');
 
@@ -70,7 +74,7 @@ if($method === 'GET') {
     }
 }
 elseif ($method === 'POST') {
-    if(isset($_POST['type']) && isset($_POST['text'])) {
+    if(isset($_POST['template-type']) && isset($_POST['template-text'])) {
         $result = addTemplate($_POST['template-name'], $_POST['template-type'], $_POST['template-text'], $conn);
         $code = $result['accept'] ? 201 : 400;
         http_response_code($code);
@@ -81,7 +85,7 @@ elseif ($method === 'DELETE') {
     if(isset($_SERVER['PATH_INFO'])) {
         $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
         $param = array_shift($request);
-        $result = deleteTemplate($param);
+        $result = deleteTemplate($param, $conn);
         if($result) {
             $result = getTemplate($conn);
             echo json_encode(['status' => 200, 'data' => $result['data']]);

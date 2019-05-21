@@ -105,3 +105,9 @@ h2 {
     background-color: rgba(0, 246, 35, 0.3);
     transition: 0.7s;
 }
+
+textarea {
+    overflow-y: scroll;
+    height: 400px;
+    /*resize: none; !* Remove this if you want the user to resize the textarea *!*/
+}

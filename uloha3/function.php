@@ -111,7 +111,7 @@ function getTemplate($conn, $id = NULL) {
             $statement->bindParam(':id', $id, PDO::PARAM_STR);
         }
         else {
-            $sql = "Select a.id, b.name as type, a.name, a.text, a.created_at From mail_template a INNER JOIN mail_template_type b On a.type = b.id ORDER BY created_at desc;";
+            $sql = "Select a.id, b.name as type, a.name, a.created_at From mail_template a INNER JOIN mail_template_type b On a.type = b.id ORDER BY created_at desc;";
             $statement = $conn->prepare($sql);
         }
         $statement->execute();
@@ -126,5 +126,26 @@ function getTemplate($conn, $id = NULL) {
         return array('accept' => true, 'error' => '', 'data' => $result);
     } catch (PDOException $e) {
         return array('accept' => false, 'error' => $e->getMessage());
+    }
+}
+
+function checkAdmin() {
+    session_start();
+    if(isset($_SESSION['admin']) && $_SESSION['admin'])
+        return true;
+    else
+        return false;
+}
+
+function checkAuth() {
+    $auth = checkAdmin();
+    if(!$auth) {
+        header("HTTP/1.1 401 Unauthorized");
+        header("Location: /");
+        http_response_code(401);
+        return false;
+    }
+    else {
+        return true;
     }
 }

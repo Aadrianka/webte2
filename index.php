@@ -47,7 +47,7 @@ if (isset($_POST['action']) && !empty($_POST['action'])) {
                 <li class="active"><a href="index.php" accesskey="1" title="">Domov</a></li>
                 <li><a href="uloha1.php" accesskey="2" title="">Uloha1</a></li>
                 <li><a href="uloha2.php" accesskey="3" title="">Uloha2</a></li>
-                <li><a href="uloha3.php" accesskey="4" title="">Uloha3</a></li>
+                <li><a href="uloha3/" accesskey="4" title="">Uloha3</a></li>
                 <li><a href="rozdel.php" accesskey="5" title="">Rozdelenie úloh</a></li>
             </ul>
         </div>

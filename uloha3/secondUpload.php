@@ -26,7 +26,8 @@ function sendMail($login, $password, $data)
             $message->setBody($data['html'], 'text/html');
 
         if (isset($data['attachment']))
-            $message->attach(Swift_Attachment::fromPath($data['attachment']));
+            $message->attach(Swift_Attachment::fromPath($data['attachment']['file'])
+                                    ->setFilename($data['attachment']['name']));
 
         $result = $mailer->send($message);
         return ['accept' => true, 'data' => $result];
@@ -42,7 +43,7 @@ function getMailPosition($csv) {
     return false;
 }
 
-function sendMailAll($csv, $template, $type){
+function sendMailAll($csv, $template, $type, $attachment){
     $type = $type === 'text/html' ? 'html' : 'text';
     try {
         $mail = getMailPosition($csv['headers']);
@@ -55,7 +56,7 @@ function sendMailAll($csv, $template, $type){
             }
             $body = str_replace('{{sender}}', $_POST['sender-name'], $body);
             $result = sendMail($_POST['user'], $_POST['password'], array('subject' => $_POST['subject'], 'sender-name' => $_POST['sender-name'],
-                'recipient' => $csv['data'][$i][$mail], $type => $body, 'sender-mail' => $_POST['sender-mail']));
+                'recipient' => $csv['data'][$i][$mail], $type => $body, 'sender-mail' => $_POST['sender-mail'], 'attachment' => $attachment));
             if(!$result['accept']) {
                 $errors[] = [$csv['data'][$i][$mail], $result['data']];
             }
@@ -73,6 +74,10 @@ function sendMailAll($csv, $template, $type){
 //sendMail('xmarinic', 'Rip.4.zaq.ova', 'xmarinic@stuba.sk', array('subject' => 'Test Mail', 'sender' => 'xmarinic@stuba.sk', 'recipient' => 'dano.marinic@gmail.com', 'text' => 'Ahoj' .PHP_EOL. ' ako?' .PHP_EOL));
 //echo json_encode(['status' => 200, 'data' => $_GET['type']]);
 //header('Content-Type: application/json; charset=utf-8');
+if(!checkAuth()) {
+    die(json_encode(['status' => 401, 'status_message' => 'Je potrebné prihlásenie ako admin!']));
+}
+
 header('Content-Type: text/html; charset=utf-8');
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -113,7 +118,8 @@ if (isset($_FILES['csv-second'])) {
         die(json_encode(['status' => 400, 'status_message' => 'Template not found!', 'data' => $template]));
 //    var_dump($template);
     $csv = parseCSV($file['filename'], $file['delimiter']);
-    $errors = sendMailAll($csv, $template['data'], $template['data']['type']);
+    $attachment = file_exists($_FILES['attachment']['tmp_name']) ? ['file' => $_FILES['attachment']['tmp_name'], 'name' => basename($_FILES['attachment']['name'])] : null;
+    $errors = sendMailAll($csv, $template['data'], $template['data']['type'], $attachment);
     echo json_encode(['status' => 200, 'errors' => $errors]);
 }
 

@@ -1,5 +1,6 @@
 $(document).ready(function () {
     getFiles(3, false);
+    getTemplates();
 
     $('#csv-first').on('change',function(){
         //get the file name
@@ -41,11 +42,13 @@ $(document).ready(function () {
             data: formData,
             responseType: "json",
             success: function () {
-                console.log('Registracia odoslana!');
+                console.log('First ok!');
                 getFiles(1, true);
             },
             error: function () {
                 formButton.html('Chyba odosielania<div class="note">Kliknutím odošleš formulár znovu</div>');
+                if(response.status === 401)
+                    window.location.replace("../");
                 // formSent = false;
                 console.warn('Chyba registracie', arguments);
             },
@@ -78,6 +81,8 @@ $(document).ready(function () {
             },
             error: function () {
                 formButton.html('Chyba odosielania<div class="note">Kliknutím odošleš formulár znovu</div>');
+                if(response.status === 401)
+                    window.location.replace("../");
                 // formSent = false;
                 console.warn('Second fail!', arguments);
             },
@@ -104,15 +109,49 @@ $(document).ready(function () {
             responseType: "json",
             success: function () {
                 console.log('Send OK!');
-                // getFiles(2, true);
-                // setSelectOption();
+                // getTemplates();
                 formButton.removeClass('btn-primary').addClass('btn-success');
                 formButton.html('Odoslané');
+                $('#send-messages').show();
             },
             error: function () {
                 formButton.html('Chyba odosielania<div class="note">Kliknutím odošleš formulár znovu</div>');
-                // formSent = false;
+                if(response.status === 401)
+                    window.location.replace("../");
                 console.warn('Send fail!', arguments);
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+
+        return false
+    });
+
+    $('#template-modal-form').submit(function (e) {
+        e.preventDefault();
+        const formButton = $(this).find('#template-add-submit');
+
+        formButton.html('Odosielam');
+
+        const formData = new FormData(this);
+        $.ajax({
+            url: 'template.php',
+            type: 'POST',
+            data: formData,
+            responseType: "json",
+            success: function () {
+                // console.log('Insert template OK!');
+                getTemplates();
+                formButton.html('Odoslané');
+                formButton.prop('disabled', true);
+            },
+            error: function (response) {
+                formButton.html('Chyba odosielania<div class="note">Kliknutím odošleš formulár znovu</div>');
+                if(response.status === 401)
+                    window.location.replace("../");
+                // formSent = false;
+                console.warn('Insert template fail!', arguments);
             },
             cache: false,
             contentType: false,
@@ -190,6 +229,8 @@ function setSelectOption() {
     })
         .fail(function () {
             console.log('Fail!');
+            if(response.status === 401)
+                window.location.replace("../");
         })
         .always(function () {
             //hideLoading();
@@ -230,6 +271,24 @@ function printTable(data, selector, mark) {
     }
 }
 
+function printTableTemplate(data, selector) {
+    if (data.length > 0)
+        $(selector + ' td').remove();
+    selector = selector.replace('#', '');
+    let table_doc = document.getElementById(selector);
+    //table data
+    var len = data.length < 5 ? data.length : 5;
+    for (let i = len - 1; i >= 0; i--) {
+        var row = table_doc.insertRow(1);
+        var id = row.insertCell(0);
+        id.innerHTML = i + 1;
+        row.insertCell(1).innerHTML = data[i].name;
+        row.insertCell(2).innerHTML = data[i].type;
+        row.insertCell(3).innerHTML = formatDate(data[i].created_at);
+        row.insertCell(4).innerHTML = "<button class='btn fas fa-trash-alt' style='color: #007bff;' onclick='deleteTemplate("+data[i].id+")'></button>";
+    }
+}
+
 function getFiles(type, mark) {
     var first = $.get( "firstUpload.php", function(response) {
         // console.log( "success" );
@@ -246,10 +305,49 @@ function getFiles(type, mark) {
                 printTable(response.data.second_files, '#second-file-table', mark);
             }
         })
-        .fail(function() {
-            alert( "error" );
+        .fail(function(response, code) {
+            if(response.status === 401)
+                window.location.replace("../");
         })
         .always(function() {
             // alert( "finished" );
         });
+}
+
+function getTemplates() {
+    var request = $.get("template.php", function (response) {
+        // console.log(response);
+        // let obj = prepareTemplateArray(response.data.templates);
+        // let files = prepareTemplateArrayForFiles(response.data.files);
+        // $('#template-select option').remove();
+        // $.each(obj, setSelect);
+        // $('#files-select option').remove();
+        // $.each(files, setSelectForFiles);
+        // console.log('ok');
+        printTableTemplate(response.data, '#template-table');
+    }, 'json')
+        .fail(function () {
+            console.log('Fail!');
+            if(response.status === 401)
+                window.location.replace("../");
+        })
+        .always(function () {
+            //hideLoading();
+        });
+}
+
+function deleteTemplate(id) {
+    $.ajax({
+        url: 'template.php/'+id,
+        type: 'DELETE',
+        responseType: "json",
+        success: function (response) {
+            printTableTemplate(response.data, '#template-table');
+        },
+        error: function (response) {
+            if(response.status === 401)
+                window.location.replace("../");
+            console.warn('Chyba pri delete', arguments);
+        },
+    });
 }
