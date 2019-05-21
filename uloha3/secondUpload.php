@@ -35,6 +35,7 @@ function sendMail($login, $password, $data)
         return ['accept' => false, 'data' => $e->getMessage()];
     }
 }
+
 function getMailPosition($csv) {
     for($i = 0; $i < count($csv); $i++) {
         if(strtolower($csv[$i]) === 'email')
@@ -43,10 +44,20 @@ function getMailPosition($csv) {
     return false;
 }
 
+function getNamePosition($csv) {
+    for($i = 0; $i < count($csv); $i++) {
+        if(strtolower($csv[$i]) === 'meno')
+            return $i;
+    }
+    return false;
+}
+
 function sendMailAll($csv, $template, $type, $attachment){
     $type = $type === 'text/html' ? 'html' : 'text';
+    $template_id = $type === 'text/html' ? 2 : 1;
     try {
         $mail = getMailPosition($csv['headers']);
+        $name = getMailPosition($csv['headers']);
         $errors = [];
         if(!$mail) return false;
         for($i = 0; $i < count($csv['data']); $i++) {
@@ -60,10 +71,26 @@ function sendMailAll($csv, $template, $type, $attachment){
             if(!$result['accept']) {
                 $errors[] = [$csv['data'][$i][$mail], $result['data']];
             }
+            else {
+                $log = logMail($csv['data'][$i][$name], $template_id, $_POST['subject']);
+                if(!$log['accept'])
+                    $errors[] = $log['error'];
+            }
         }
         return $errors;
     } catch (Exception $e) {
         return false;
+    }
+}
+
+function logMail($recipient, $template_id, $subject, $conn) {
+    try {
+        $sql = "Insert Into mail_log (recipient, template_type_id, $subject) VALUES(?, ?, ?)";
+        $statement = $conn->prepare($sql);
+        $statement->execute(array($recipient, $template_id, $subject));
+        return ['accept' => true, 'error' => []];
+    } catch (PDOException $e) {
+        return ['accept' => false, 'error' => $e->getMessage()];
     }
 }
 
