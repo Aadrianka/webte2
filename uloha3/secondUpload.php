@@ -2,6 +2,7 @@
 
 include "function.php";
 require_once "../vendor/autoload.php";
+require_once 'config.php';
 
 function sendMail($login, $password, $data)
 {
@@ -52,7 +53,7 @@ function getNamePosition($csv) {
     return false;
 }
 
-function sendMailAll($csv, $template, $type, $attachment){
+function sendMailAll($csv, $template, $type, $attachment, $conn){
     $type = $type === 'text/html' ? 'html' : 'text';
     $template_id = $type === 'text/html' ? 2 : 1;
     try {
@@ -72,7 +73,7 @@ function sendMailAll($csv, $template, $type, $attachment){
                 $errors[] = [$csv['data'][$i][$mail], $result['data']];
             }
             else {
-                $log = logMail($csv['data'][$i][$name], $template_id, $_POST['subject']);
+                $log = logMail($csv['data'][$i][$name], $template_id, $_POST['subject'], $conn);
                 if(!$log['accept'])
                     $errors[] = $log['error'];
             }
@@ -85,10 +86,32 @@ function sendMailAll($csv, $template, $type, $attachment){
 
 function logMail($recipient, $template_id, $subject, $conn) {
     try {
-        $sql = "Insert Into mail_log (recipient, template_type_id, $subject) VALUES(?, ?, ?)";
+        $sql = "Insert Into mail_log (recipient, template_type_id, `subject`) VALUES(:recipient, :template_id, :subject)";
         $statement = $conn->prepare($sql);
-        $statement->execute(array($recipient, $template_id, $subject));
+//        $statement->execute(array($recipient, $template_id, $subject));
+        $statement->bindParam(':recipient', $recipient, PDO::PARAM_STR);
+        $statement->bindParam(':template_id', $template_id, PDO::PARAM_INT);
+        $statement->bindParam(':subject', $subject, PDO::PARAM_STR);
+        $statement->execute();
         return ['accept' => true, 'error' => []];
+    } catch (PDOException $e) {
+        return ['accept' => false, 'error' => $e->getMessage()];
+    }
+}
+
+function getLogMail($conn) {
+    try {
+        $sql = "Select recipient, b.name as type, subject, created_at
+            From mail_log a Inner Join mail_template_type b On a.template_type_id = b.id
+            Order by created_at desc;";
+
+        $statement = $conn->prepare($sql);
+        $statement->execute();
+        $data = $statement->fetchAll();
+        if($data)
+            return ['accept' => true, 'error' => [], 'data' => $data];
+        else
+            return ['accept' => false, 'error' => []];
     } catch (PDOException $e) {
         return ['accept' => false, 'error' => $e->getMessage()];
     }
@@ -100,18 +123,21 @@ function logMail($recipient, $template_id, $subject, $conn) {
 
 //sendMail('xmarinic', 'Rip.4.zaq.ova', 'xmarinic@stuba.sk', array('subject' => 'Test Mail', 'sender' => 'xmarinic@stuba.sk', 'recipient' => 'dano.marinic@gmail.com', 'text' => 'Ahoj' .PHP_EOL. ' ako?' .PHP_EOL));
 //echo json_encode(['status' => 200, 'data' => $_GET['type']]);
-//header('Content-Type: application/json; charset=utf-8');
+header('Content-Type: application/json; charset=utf-8');
+//header('Content-Type: text/html; charset=utf-8');
 if(!checkAuth()) {
     die(json_encode(['status' => 401, 'status_message' => 'Je potrebné prihlásenie ako admin!']));
 }
 
-header('Content-Type: text/html; charset=utf-8');
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+
+if($_SERVER['REQUEST_METHOD'] === 'GET') {
+    echo json_encode(getLogMail($conn));
+    exit;
+}
+elseif ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     die(json_encode(array('status_code' => 405, 'status_message' => 'Not allowed request method!', 'data' => array())));
 }
-
-require_once 'config.php';
 
 $hash = bin2hex(random_bytes(16));
 
@@ -146,10 +172,6 @@ if (isset($_FILES['csv-second'])) {
 //    var_dump($template);
     $csv = parseCSV($file['filename'], $file['delimiter']);
     $attachment = file_exists($_FILES['attachment']['tmp_name']) ? ['file' => $_FILES['attachment']['tmp_name'], 'name' => basename($_FILES['attachment']['name'])] : null;
-    $errors = sendMailAll($csv, $template['data'], $template['data']['type'], $attachment);
+    $errors = sendMailAll($csv, $template['data'], $template['data']['type'], $attachment, $conn);
     echo json_encode(['status' => 200, 'errors' => $errors]);
 }
-
-
-
-//$csv = parseCSV($uploadfile['uploadfile'], $_POST['second-delimiter']);

@@ -1,10 +1,41 @@
-body {
-    padding: 50px;
-    /*margin: 0 auto;*/
-}
+/*body {*/
+/*    !*padding: 50px;*!*/
+/*    margin: 0;*/
+/*    !*margin: 0 auto;*!*/
+/*}*/
 * {
     box-sizing: border-box;
 }
+
+/*ul {*/
+/*    list-style-type: none;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    overflow: hidden;*/
+/*    border: 1px solid #e7e7e7;*/
+/*    background-color: #f3f3f3;*/
+/*}*/
+
+/*li {*/
+/*    float: left;*/
+/*}*/
+
+/*li a {*/
+/*    display: block;*/
+/*    color: #666;*/
+/*    text-align: center;*/
+/*    padding: 14px 16px;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*li a:hover:not(.active) {*/
+/*    background-color: #ddd;*/
+/*}*/
+
+/*li a.active {*/
+/*    color: white;*/
+/*    background-color: #007bff;*/
+/*}*/
 
 /* Create two equal columns that floats next to each other */
 .column {
@@ -110,4 +141,89 @@ textarea {
     overflow-y: scroll;
     height: 400px;
     /*resize: none; !* Remove this if you want the user to resize the textarea *!*/
+}
+
+.container {
+    width: 50%;
+    max-width: 50%;
+    min-width: 250px;
+}
+
+body {
+    /*padding: 8em;*/
+    width: 100%;
+    /*max-width: 1250px;*/
+    margin: 0 auto;
+    height: 100%;
+    background-color: #2056ac;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+}
+
+/*********************************************************************************/
+/* Wrapper                                                                       */
+/*********************************************************************************/
+
+
+.wrapper
+{
+    overflow: hidden;
+    padding: 0em 0em 5em 0em;
+    padding-bottom:200px;
+    background: #FFF;
+
+}
+/*********************************************************************************/
+/* Menu                                                                          */
+/*********************************************************************************/
+
+#menu
+{
+    height: 59px;
+}
+
+#menu ul
+{
+    display: inline-block;
+    padding: 0em 2em;
+    text-align: center;
+}
+
+#menu li
+{
+    display: inline-block;
+}
+
+#menu li a, #menu li span
+{
+    display: inline-block;
+    padding: 0em 1.5em;
+    text-decoration: none;
+    font-size: 0.90em;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 60px;
+    outline: 0;
+    color: #FFF;
+}
+
+#menu li:hover a, #menu li.active a, #menu li.active span
+{
+    background: #FFF;
+    border-radius: 7px 7px 0px 0px;
+    color: #2056ac;
+}
+
+.sticky-footer {
+    background: #e5e5e5;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+    z-index: 10;
+    transform: translateZ(0);
 }

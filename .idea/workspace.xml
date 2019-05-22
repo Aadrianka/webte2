@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="301c98d9-7309-41e0-8985-c3140cd14c41" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/uloha3/lang/en.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uloha3/lang/sk.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ldapfunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/ldapfunctions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainscript.js" beforeDir="false" afterPath="$PROJECT_DIR$/mainscript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha3/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/uloha3/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha3/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/uloha3/js/scripts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uloha3/secondUpload.php" beforeDir="false" afterPath="$PROJECT_DIR$/uloha3/secondUpload.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,6 +22,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -32,32 +44,45 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uloha3/template.php">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uloha3/function.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
+            <state relative-caret-position="153">
+              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uloha3/secondUpload.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
               <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uloha3/firstUpload.php">
+        <entry file="file://$PROJECT_DIR$/uloha3/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="3876">
+              <caret line="228" column="1" selection-start-line="228" selection-start-column="1" selection-end-line="228" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/uloha3/js/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="137" selection-start-line="137" selection-end-line="137" />
+            <state relative-caret-position="332">
+              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
               </folding>
@@ -65,38 +90,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/uloha3/secondUpload.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uloha3/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="286" column="26" selection-start-line="286" selection-start-column="22" selection-end-line="286" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uloha3/tst.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+            <state relative-caret-position="236">
+              <caret line="82" column="102" selection-start-line="82" selection-start-column="97" selection-end-line="82" selection-end-column="102" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#9328#9368#0#HTML" expanded="true" />
+                <element signature="e#10745#10774#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,19 +121,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>butto</find>
-      <find>first-up</find>
-      <find>tran</find>
-      <find>myModal</find>
-      <find>delimiter</find>
-      <find>get</find>
-      <find>sendMail</find>
-      <find>$template</find>
-      <find>acc</find>
       <find>send-messages</find>
       <find />
       <find>fetchByLogin</find>
-      <find>getTe</find>
       <find>.get</find>
       <find>$.get</find>
       <find>prin</find>
@@ -134,6 +131,26 @@
       <find>printTableT</find>
       <find>form</find>
       <find>getTemp</find>
+      <find>getTe</find>
+      <find>mail_type</find>
+      <find>$logDB</find>
+      <find>files</find>
+      <find>bod</find>
+      <find>ul</find>
+      <find>li</find>
+      <find>wrapper</find>
+      <find>wrapp</find>
+      <find>menu</find>
+      <find>default.css</find>
+      <find>lang</find>
+      <find>#sk</find>
+      <find>wrap</find>
+      <find>sticky-footer</find>
+      <find>log-all-mail</find>
+      <find>log-mail-all</find>
+      <find>sortable</find>
+      <find>class=&quot;sortable&quot;</find>
+      <find>súbor</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,7 +168,6 @@
         <option value="$PROJECT_DIR$/ldapfunctions.php" />
         <option value="$PROJECT_DIR$/mainscript.js" />
         <option value="$PROJECT_DIR$/style.css" />
-        <option value="$PROJECT_DIR$/uloha3/config.php" />
         <option value="$PROJECT_DIR$/uloha3/addTemplate.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/uloha3/index.html" />
@@ -160,13 +176,17 @@
         <option value="$PROJECT_DIR$/uloha3/tst.php" />
         <option value="$PROJECT_DIR$/uloha3/firstUpload.php" />
         <option value="$PROJECT_DIR$/uloha3/function.php" />
-        <option value="$PROJECT_DIR$/uloha3/css/styles.css" />
         <option value="$PROJECT_DIR$/uloha3/select.html" />
+        <option value="$PROJECT_DIR$/uloha3/template.php" />
+        <option value="&lt;0d33261e-4561-48f7-9c5a-7f114e291c12&gt;/zaver/uloha3/config.php" />
+        <option value="$PROJECT_DIR$/uloha3/config.php" />
+        <option value="$PROJECT_DIR$/uloha3/secondUpload.php" />
+        <option value="$PROJECT_DIR$/uloha3/lang/en.php" />
+        <option value="$PROJECT_DIR$/uloha3/lang/sk.php" />
+        <option value="$PROJECT_DIR$/uloha3/css/styles.css" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/uloha3/index.php" />
-        <option value="$PROJECT_DIR$/uloha3/template.php" />
         <option value="$PROJECT_DIR$/uloha3/js/scripts.js" />
-        <option value="$PROJECT_DIR$/uloha3/secondUpload.php" />
       </list>
     </option>
   </component>
@@ -185,7 +205,7 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="951" />
+    <option name="x" value="-9" />
     <option name="width" value="978" />
     <option name="height" value="1039" />
   </component>
@@ -201,6 +221,41 @@
             <path>
               <item name="WEBTE2-PROJEKT-GIT" type="b2602c69:ProjectViewProjectNode" />
               <item name="WEBTE2-PROJEKT-GIT" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBTE2-PROJEKT-GIT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBTE2-PROJEKT-GIT" type="462c0819:PsiDirectoryNode" />
+              <item name="uloha3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBTE2-PROJEKT-GIT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBTE2-PROJEKT-GIT" type="462c0819:PsiDirectoryNode" />
+              <item name="uloha3" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBTE2-PROJEKT-GIT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBTE2-PROJEKT-GIT" type="462c0819:PsiDirectoryNode" />
+              <item name="uloha3" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBTE2-PROJEKT-GIT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBTE2-PROJEKT-GIT" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBTE2-PROJEKT-GIT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBTE2-PROJEKT-GIT" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBTE2-PROJEKT-GIT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WEBTE2-PROJEKT-GIT" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -256,7 +311,10 @@
       <workItem from="1558191485812" duration="8046000" />
       <workItem from="1558268477633" duration="9692000" />
       <workItem from="1558299923547" duration="61502000" />
-      <workItem from="1558468080147" duration="6935000" />
+      <workItem from="1558468080147" duration="9444000" />
+      <workItem from="1558513059432" duration="18000" />
+      <workItem from="1558524447306" duration="6488000" />
+      <workItem from="1558549366232" duration="10431000" />
     </task>
     <task id="LOCAL-00001" summary="Uloha3 - 1st, 2nd API, main app logic">
       <created>1558269225947</created>
@@ -321,17 +379,24 @@
       <option name="project" value="LOCAL" />
       <updated>1558478897223</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Uloha3 - Log sent mail">
+      <created>1558481397311</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1558481397311</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86175000" />
+    <option name="totallyTimeSpent" value="105621000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19530201" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16577181" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -352,10 +417,10 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.3295302" />
-      <window_info anchor="right" id="Remote Host" order="4" weight="0.3295302" />
+      <window_info anchor="right" id="Remote Host" order="4" weight="0.2785235" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.4216366" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.16644295" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -369,12 +434,14 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3243626" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3286119" />
+      <window_info anchor="bottom" id="File Transfer" order="13" sideWeight="0.49932885" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.3295302" />
+      <window_info active="true" anchor="right" id="Remote Host" order="4" visible="true" weight="0.2785235" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +456,8 @@
     <MESSAGE value="Uloha3 - Mailer" />
     <MESSAGE value="Uloha3 - Mailer finall" />
     <MESSAGE value="Uloha3 - Insert template (REST)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Uloha3 - Insert template (REST)" />
+    <MESSAGE value="Uloha3 - Log sent mail" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uloha3 - Log sent mail" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -410,8 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mainscript.js" />
-    <entry file="file://$PROJECT_DIR$/style.css" />
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/ldap/ldap.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -432,13 +498,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/uloha3/addTemplate.php" />
-    <entry file="file://$PROJECT_DIR$/uloha3/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LocalUser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
@@ -453,10 +512,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uloha3/css/styles.css">
+    <entry file="file://$PROJECT_DIR$/uloha3/select.html" />
+    <entry file="file://$PROJECT_DIR$/uloha3/index.html" />
+    <entry file="file://$PROJECT_DIR$/uloha3/tst.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1870">
-          <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+        <state relative-caret-position="17">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -467,79 +528,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uloha3/select.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="276" column="53" lean-forward="true" selection-start-line="276" selection-start-column="53" selection-end-line="276" selection-end-column="53" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uloha3/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="49" column="29" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uloha3/tst.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uloha3/firstUpload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        <state relative-caret-position="389">
+          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uloha3/index.php">
+    <entry file="file://$PROJECT_DIR$/uloha3/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="286" column="26" selection-start-line="286" selection-start-column="22" selection-end-line="286" selection-end-column="26" />
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uloha3/js/scripts.js">
+    <entry file="file://$PROJECT_DIR$/uloha3/template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="137" selection-start-line="137" selection-end-line="137" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
-          </folding>
+        <state>
+          <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/uloha3/function.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
+        <state relative-caret-position="153">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="442" column="1" lean-forward="true" selection-start-line="407" selection-end-line="442" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uloha3/lang/en.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="32" column="43" selection-end-line="34" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uloha3/lang/sk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mainscript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="55" column="7" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="55" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uloha3/secondUpload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
           <caret line="101" column="9" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uloha3/template.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uloha3/secondUpload.php">
+    <entry file="file://$PROJECT_DIR$/uloha3/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+        <state relative-caret-position="3876">
+          <caret line="228" column="1" selection-start-line="228" selection-start-column="1" selection-end-line="228" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="43" column="3" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/application/scripts/jquery.sortElements.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="30" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uloha3/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="82" column="102" selection-start-line="82" selection-start-column="97" selection-end-line="82" selection-end-column="102" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#9328#9368#0#HTML" expanded="true" />
+            <element signature="e#10745#10774#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uloha3/js/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
