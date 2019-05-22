@@ -23,13 +23,36 @@ function setListeners () {
     $("button#logoutButt").click( function () {
         $.ajax({
             url: 'index.php',
+            async: false,
             data: {action : 'logout'},
             type : 'post',
             success : function (output) {
-                console.log(output);
             }
         });
         showChoice();
+    });
+    $("img#sk").click( function () {
+        $.ajax({
+            url: 'index.php',
+            async: false,
+            data: {action : 'changeLanguage', lang : "sk" },
+            type : 'post',
+            success : function (output) {
+                //console.log(output);
+                location.reload(true);
+            }
+        });
+    });
+    $("img#en").click( function () {
+        $.ajax({
+            url: 'index.php',
+            async: false,
+            data: {action : 'changeLanguage', lang : "en" },
+            type : 'post',
+            success : function (output) {
+                location.reload(true);
+            }
+        });
     });
 
 }
@@ -38,6 +61,7 @@ function showChoice() {
     $("div#choice").css("display", "block");
     $("div#login").css("display", "none");
     $("div#LDAP").css("display", "none");
+    $("div#welcome").css("display", "none");
     $('#content').html("");
 }
 function showLogin() {

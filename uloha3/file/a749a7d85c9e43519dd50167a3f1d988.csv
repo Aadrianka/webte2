@@ -1,0 +1,5 @@
+ID;meno;Email;login;heslo;verejnaIP;privatnaIP;ssh;http;https;misc1;misc2
+85944;Mariniè Daniel;xmarinic@is.stuba.sk;xmarinic;vzX3nGniwDG4wjY;147.175.121.210;192.168.0.1;2201;8001;4401;9001;1901
+12345;Priezvisko Meno;xmarinic@stuba.sk;xpriezvisko;OsfGIGJjWmfhMaY;147.175.121.210;192.168.0.2;2202;8002;4402;9002;1902
+2456;Priezvisko2 Meno2;dano.marinic@gmail.com;xpriezvisko2;Hb0xIe0yxGq66hp;147.175.121.210;192.168.0.3;2203;8003;4403;9003;1903
+345678;Priezvisko3 Meno3;dano.marinic@gmail.com;xpriezvisko3;4PMYMhsWvUAGHHh;147.175.121.210;192.168.0.4;2204;8004;4404;9004;1904

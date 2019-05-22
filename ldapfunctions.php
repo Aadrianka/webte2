@@ -19,24 +19,40 @@ function ldapLoginCheck($name, $password)
     $ldapStuPort = '389';
 
     $ldapCon = ldap_connect($ldapStuSrv, $ldapStuPort);
-    $ldapFrm = 'uid=' . $name . ',ou=People,DC=stuba,DC=sk';
+    $ldapFrm = 'uid=' . strval($name) . ',ou=People,DC=stuba,DC=sk';
     ldap_set_option($ldapCon, LDAP_OPT_PROTOCOL_VERSION, 3);
     $auth = ldap_bind($ldapCon, $ldapFrm, $password);
+
+    $ldapCon2 = ldap_connect($ldapStuSrv, $ldapStuPort);
+    $sr = ldap_search($ldapCon2, "dc=stuba, dc =sk", "uid=" . $name);
+    $info = ldap_get_entries($ldapCon2, $sr);
+
     if ($auth) {
-        return true;
+        return $info[0]['uisid'][0];
     }
     else {
         return false;
     }
 }
 
-function logout() {
-    ldap_close();
-    session_unset();
+function logout($admin) {
+    if(!$admin) {
+        ldap_close();
+    }
+    unset($_SESSION['admin']);
+    unset($_SESSION['user']);
 }
 
-function welcome($conn, $login) {
-    echo '<h3>Vitajte <b>'.$login.'</b>, ste prihlásený!!</h3><script>showNothing();</script>';
-    echo '<button name="logoutButt" id="logoutButt" class="btn btn-primary">Odhlásenie</button>';
+function welcome($login) {
+    echo '<div id="welcome"> ';
+    if(!isset($_SESSION['lang']) || $_SESSION['lang'] == 'sk') {
+        echo '<h3 class="display-3"> Vitajte <b>' . $login . '</b>, ste prihlásený!!</h3><script>showNothing();</script>';
+        echo '<button name="logoutButt" id="logoutButt" class="btn btn-primary">Odhlásenie</button>';
+    }
+    else if ($_SESSION['lang'] == 'en') {
+        echo '<h3 class="display-3">Welcome <b>' . $login . '</b>, you\'re logged in!!</h3><script>showNothing();</script>';
+        echo '<button name="logoutButt" id="logoutButt" class="btn btn-primary">Log out</button>';
+    }
+    echo '</div>';
 }
 

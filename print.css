@@ -1,0 +1,14 @@
+#header, footer, aside, nav, form, iframe, .menu, .hero, .adslot {
+  display: none;
+}
+
+.wrapper #wrap .container .row .form-horizontal{
+  display: none;
+max-width: 100%;
+}
+
+#header-wrapper{
+  display:none;
+max-width: 100%;
+  
+}
